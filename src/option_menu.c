@@ -238,7 +238,7 @@ void CB2_InitOptionMenu(void)
         gTasks[taskId].data[TD_MENUSELECTION] = 0;
         gTasks[taskId].data[TD_TEXTSPEED] = gSaveBlock2Ptr->optionsTextSpeed;
         gTasks[taskId].data[TD_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
-        gTasks[taskId].data[TD_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
+        gTasks[taskId].data[TD_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle +1; // make 'SET' default
         gTasks[taskId].data[TD_SOUND] = gSaveBlock2Ptr->optionsSound;
         gTasks[taskId].data[TD_BUTTONMODE] = gSaveBlock2Ptr->optionsButtonMode;
         gTasks[taskId].data[TD_FRAMETYPE] = gSaveBlock2Ptr->optionsWindowFrameType;
@@ -474,11 +474,13 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-    {
-        selection ^= 1;
-        sArrowPressed = TRUE;
-    }
+    // Force selection to be "SET"
+    
+    //if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    //{
+    //    selection ^= 1;
+    //    sArrowPressed = TRUE;
+    //}
 
     return selection;
 }

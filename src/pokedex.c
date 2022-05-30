@@ -2330,6 +2330,10 @@ static void PrintMonDexNumAndName(u8 windowId, u8 fontId, const u8* str, u8 left
 // u16 ignored is passed but never used
 static void CreateMonListEntry(u8 position, u16 b, u16 ignored)
 {
+
+
+    // connect this with pokemon.c to flag routes
+    
     s16 entryNum;
     u16 i;
     u16 vOffset;

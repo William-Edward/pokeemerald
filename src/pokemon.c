@@ -4368,6 +4368,10 @@ void CopyMon(void *dest, void *src, size_t size)
 
 u8 GiveMonToPlayer(struct Pokemon *mon)
 {
+    // check map route where this function was called
+    // if a pokemon was added to party on a route, flag the route
+    // then prevent further encounters on that route.
+
     s32 i;
 
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);

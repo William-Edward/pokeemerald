@@ -70,8 +70,11 @@ static const u16 sRoute119WaterTileData[] =
     92, 139,  NUM_FISHING_SPOTS_1 + NUM_FISHING_SPOTS_2,
 };
 
+//#include FLAG_DISABLE_AFTER_SEEN = 1
+
 void DisableWildEncounters(bool8 disabled)
 {
+    // maybe use this to disable for a route
     sWildEncountersDisabled = disabled;
 }
 
@@ -539,6 +542,10 @@ static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
 
 bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavior)
 {
+	
+	// if pokemon seen at route, FALSE
+	// pull from pokemon.c, ...storage_system.c, ...summary_screen.c, 
+
     u16 headerId;
     struct Roamer *roamer;
 

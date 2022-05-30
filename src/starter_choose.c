@@ -548,6 +548,8 @@ static void Task_HandleConfirmStarterInput(u8 taskId)
     {
     case 0:  // YES
         // Return the starter choice and exit.
+        // gRoute101Counter = 1;
+        
         gSpecialVar_Result = gTasks[taskId].tStarterSelection;
         ResetAllPicSprites();
         SetMainCallback2(gMain.savedCallback);

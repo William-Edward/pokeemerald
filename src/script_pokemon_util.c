@@ -60,6 +60,9 @@ void HealPlayerParty(void)
 
 u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
 {
+
+    // flag route here?
+    
     u16 nationalDexNum;
     int sentToPc;
     u8 heldItem[2];
@@ -86,6 +89,9 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
 
 u8 ScriptGiveEgg(u16 species)
 {
+
+    // flag route for eggs too (maybe)
+
     struct Pokemon mon;
     u8 isEgg;
 

@@ -6379,6 +6379,8 @@ static void SetPlacedMonData(u8 boxId, u8 position)
 }
 
 static void PurgeMonOrBoxMon(u8 boxId, u8 position)
+// release if fainted here
+
 {
     if (boxId == TOTAL_BOXES_COUNT)
         ZeroMonData(&gPlayerParty[position]);
@@ -6434,6 +6436,7 @@ static void ResetSelectionAfterDeposit(void)
 
 static void InitReleaseMon(void)
 {
+    // release mon after fainted
     u8 mode;
 
     if (sIsMonBeingMoved)
@@ -6462,6 +6465,7 @@ static bool8 TryHideReleaseMon(void)
 
 static void ReleaseMon(void)
 {
+    // release mon after fainted
     u8 boxId;
 
     DestroyReleaseMonIcon();
